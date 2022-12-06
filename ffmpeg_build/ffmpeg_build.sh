@@ -14,8 +14,13 @@ SYSROOT="$NDK_PATH/toolchains/llvm/prebuilt/$HOST_PLATFORM/sysroot"
 CFLAG="-D__ANDROID_API__=$API -Os -fPIC -DANDROID "
 LDFLAG="-lc -lm -ldl -llog "
 
+<<<<<<< HEAD
 # 输出目录 上一层目录
 PREFIX=`pwd`/../android-build
+=======
+# 输出目录
+PREFIX=`pwd`/android-build
+>>>>>>> 56bfbb76c28eb5489ceaefa8312c3711180e5681
 # 日志输出目录
 CONFIG_LOG_PATH=${PREFIX}/log
 # 公共配置
@@ -25,6 +30,10 @@ CONFIGURATION=
 
 build() {
   APP_ABI=$1
+<<<<<<< HEAD
+=======
+  cd FFmpeg
+>>>>>>> 56bfbb76c28eb5489ceaefa8312c3711180e5681
   echo "======== > Start build $APP_ABI"
   case ${APP_ABI} in
   armeabi-v7a)
@@ -114,6 +123,10 @@ build() {
   echo "-------- > Start install $APP_ABI"
   make install
   echo "++++++++ > make and install $APP_ABI complete."
+<<<<<<< HEAD
+=======
+  cd ..
+>>>>>>> 56bfbb76c28eb5489ceaefa8312c3711180e5681
 }
 
 build_all() {
